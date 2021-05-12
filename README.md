@@ -1,57 +1,25 @@
-# cs458-project4 project
+# COVID Symptoms Tracking Application Backend
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project contains the code for the frontend of CS458 Project 4, COVID Symptoms Tracking application. The src/main folder contains the code for the backend application whereas the src/test folder contains test classes. The database folder contains SQLite database. The backned uses Keycloak OpenID-connect as its authentication server. The realm configuration is given in the realm-export.json file.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+## Starting the Authentication Server
 
-## Running the application in dev mode
+You can run the keycloak authentication server in a docker container using:
+```shell script
+docker pull quay.io/keycloak/keycloak:latest
+docker run --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -p 8180:8080 -p 8543:8443 quay.io/keycloak/keycloak:latest
+```
 
-You can run your application in dev mode that enables live coding using:
+## Running the application
+
+You can run the application using:
 ```shell script
 ./mvnw compile quarkus:dev
 ```
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+## Testing the application
 
-## Packaging and running the application
-
-The application can be packaged using:
+You can run the unit tests using:
 ```shell script
-./mvnw package
+./mvnw test
 ```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/cs458-project4-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
-
-## Related guides
-
-
-## Provided examples
-
-### RESTEasy JSON serialisation using Jackson
-
-This example demonstrate RESTEasy JSON serialisation by letting you list, add and remove quark types from a list. Quarked!
-
-[Related guide section...](https://quarkus.io/guides/rest-json#creating-your-first-json-rest-service)
