@@ -1,0 +1,17 @@
+package com.project4.cs458.models;
+
+public enum Symptoms {
+    BREATHING_DIFFICULTY,
+    CHEST_PRESSURE,
+    SPEECH_MOVEMENT_LOSS,
+    FEVER,
+    DRY_COUGH,
+    TIREDNESS,
+    BODY_ACHE,
+    SORE_THROAT,
+    DIARRHOEA,
+    CONJUNCTIVITIS,
+    HEADACHE,
+    TASTE_SMELL_LOSS,
+    SKIN_RASH;
+}

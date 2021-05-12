@@ -1,0 +1,11 @@
+POST http://localhost:8080/v1/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "email": "msaboor33@gmail.com",
+    "password": "passwordx",
+    "name": "Muhammad Saboor",
+    "age": 12,
+    "location": 12,
+    "nationality": 12
+}

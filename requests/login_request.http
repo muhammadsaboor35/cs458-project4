@@ -1,0 +1,7 @@
+POST http://localhost:8080/v1/users/token HTTP/1.1
+content-type: application/json
+
+{
+    "email": "msaboor35@gmail.com",
+    "password": "passwordx"
+}
